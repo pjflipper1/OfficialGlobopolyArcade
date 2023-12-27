@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    
+    .button-container {
+      display: grid;
+      grid-template-columns: repeat(3, 100px);
+      grid-template-rows: repeat(3, 100px);
+      gap: 15px;
+    }
+
+    .button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 110px;
+      height: 110px;
+      background-color: #3498db;
+      color: #fff;
+      font-size: 18px;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class = "score-container">
+    <h1 id="score"></h1>
+  </div>
+  <div class="button-container">
+    <button id = "one" class="button" onclick = "TileOne(),ScoreDisplay(),ScoreKeeper()"></button>
+    <button id = "two" class="button" onclick = "TileTwo(),ScoreDisplay(),ScoreKeeper()"></button>
+    <button id = "three" class="button" onclick = "TileThree(),ScoreDisplay(),ScoreKeeper()"</button>
+    <button id = "four" class="button" onclick = "TileFour(),ScoreDisplay(),ScoreKeeper()"></button>
+    <button id = "five" class="button" onclick = "TileFive(),ScoreDisplay(),ScoreKeeper()"></button>
+    <button id = "six" class="button" onclick = "TileSix(),ScoreDisplay(),ScoreKeeper()"></button>
+    <button id = "seven" class="button" onclick = "TileSeven(),ScoreDisplay(),ScoreKeeper()"></button>
+    <button id = "eight" class="button" onclick = "TileEight(),ScoreDisplay(),ScoreKeeper()"></button>
+    <button id = "nine" class="button" onclick = "TileNine(),ScoreDisplay(),ScoreKeeper()"></button>
+  </div>
+  <script src = "skreept.js"></script>
+</body>
+</html>
+

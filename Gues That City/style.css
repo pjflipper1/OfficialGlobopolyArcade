@@ -1,0 +1,81 @@
+/* Reset default margin and padding for all elements */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url(https://media.istockphoto.com/id/1151367251/vector/seamless-texture-city-map-in-retro-style-outline-map.jpg?s=612x612&w=0&k=20&c=0EzK-SAxKD6tkZJGMjICcYenqTgL6SXc8LFGxMpHY3Y=);
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.header {
+  background-color: #00000077;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+.title-header {
+  margin: 0;
+}
+
+.main-content {
+  text-align: center;
+  padding: 20px;
+}
+
+.clickplay {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+#score {
+  font-size: 24px;
+}
+
+#win {
+  font-size: 18px;
+  color: rgb(255, 255, 255);
+  margin-bottom: 20px;
+}
+
+#myButton,
+#submitButton {
+  background-color: #00000077;
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#myButton:hover,
+#submitButton:hover {
+  background-color: #000000;
+}
+
+.button-hidden {
+    display: none;
+}
+
+input[type="text"] {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 200px;
+}
+
+#output,
+#output1 {
+  font-size: 18px;
+  margin-top: 10px;
+}
