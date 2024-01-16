@@ -1,44 +1,72 @@
-function computerMove(GameBoard) {
-    // Find an empty position on the board
-    var board = GameBoard;
-    var emptyPositions = [];
-    for (var i = 0; i < board.length; i++) {
-        if (board[i] === 0) {
-            emptyPositions.push(i);
-        }
+function ZeroCounter(board,TotalRuns,ZeroCount){
+    var GameBoard = board;
+    if (GameBoard[TotalRuns] === 0){
+        ZeroCount = ZeroCount + 1; 
     }
-    for (var i = 0; i < emptyPositions.length; i++) {
-        var position = emptyPositions[i];
-
-        // Simulate placing the computer's move in the empty position
-        board[position] = 2;
-
-        // Check if the computer wins
-        if (checkWin(board, 2)) {
-            // If the computer wins by placing in this position, make the move
-            return board;
-        }
-
-        // Undo the move for future simulations
-        board[position] = 0;
+    if (TotalRuns === 8){
+        return ZeroCount;
     }
-
-    // If there's no winning move, choose a random empty position
-    var randomIndex = Math.floor(Math.random() * emptyPositions.length);
-    var computerPosition = emptyPositions[randomIndex];
-
-    // Make the move (put 2 in the chosen position)
-    board[computerPosition] = 2;
-
-    return board;
+    else{
+        return ZeroCounter(board,(TotalRuns+1),ZeroCount);
+    }
 }
 
-// Function to check if a player has won
-function checkWin(board, player) {
-    // Implement your win-checking logic here
-    // For simplicity, you can use a predefined function or create your own logic
-    // For example, you can check rows, columns, and diagonals for the same player symbol
-    // Return true if the player has won, false otherwise
+function computerMove(GameBoard) {
+    var board = GameBoard;
+    var ZeroCount = ZeroCounter(board,0,0);
+    var CasePlays = [[1,3,4],[0,2,4],[1,4,5],[0,4,6],[3,5,1],[2,4,8],[3,4,7],[4,6,8],[4,5,7]];
+    var Moves = [];
+
+    if(ZeroCount === 8){
+        if (board === [1,0,0,0,0,0,0,0,0]){
+            var randomNumber = Math.floor(Math.random() * 3);
+            var Moves = CasePlays[0];
+            board[Moves[randomNumber]] = 2;
+        }
+        if (board === [0,1,0,0,0,0,0,0,0]){
+            var randomNumber = Math.floor(Math.random() * 3);
+            var Moves = CasePlays[1];
+            board[Moves[randomNumber]] = 2;
+        }
+        if (board === [0,0,1,0,0,0,0,0,0]){
+            var randomNumber = Math.floor(Math.random() * 3);
+            var Moves = CasePlays[2];
+            board[Moves[randomNumber]] = 2;
+        }
+        if (board === [0,0,0,1,0,0,0,0,0]){
+            var randomNumber = Math.floor(Math.random() * 3);
+            var Moves = CasePlays[3];
+            board[Moves[randomNumber]] = 2;
+        }
+        if (board === [0,0,0,0,1,0,0,0,0]){
+            var randomNumber = Math.floor(Math.random() * 3);
+            var Moves = CasePlays[4];
+            board[Moves[randomNumber]] = 2;
+        }
+        if (board === [0,0,0,0,0,1,0,0,0]){
+            var randomNumber = Math.floor(Math.random() * 3);
+            var Moves = CasePlays[5];
+            board[Moves[randomNumber]] = 2;
+        }
+        if (board === [0,0,0,0,0,0,1,0,0]){
+            var randomNumber = Math.floor(Math.random() * 3);
+            var Moves = CasePlays[6];
+            board[Moves[randomNumber]] = 2;
+        }
+        if (board === [0,0,0,0,0,0,0,1,0]){
+            var randomNumber = Math.floor(Math.random() * 3);
+            var Moves = CasePlays[7];
+            board[Moves[randomNumber]] = 2;
+        }
+        if (board === [0,0,0,0,0,0,0,0,1]){
+            var randomNumber = Math.floor(Math.random() * 3);
+            var Moves = CasePlays[8];
+            board[Moves[randomNumber]] = 2;
+        }
+    }
+    else if(ZeroCount = 6){
+        
+    }
 }
 
 var GameBoard = [0,0,0,0,0,0,0,0,0];
